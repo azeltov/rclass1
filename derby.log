@@ -1,8 +1,8 @@
 ----------------------------------------------------------------
-Wed Oct 04 17:42:05 UTC 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-015e-e87a-f448-00002da5cbb8 
-on database directory memory:/home/azeltov/BigModel/databaseName=metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@55567961 
-Loaded from file:/home/azeltov/.cache/spark/spark-1.6.2-bin-hadoop2.6/lib/spark-assembly-1.6.2-hadoop2.6.0.jar
+Thu Oct 05 22:15:33 UTC 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-015e-ee9b-abcf-000009a07ff8 
+on database directory memory:/home/azeltov/BigModel/databaseName=metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@2a25a609 
+Loaded from file:/dsvm/tools/spark/spark-2.1.1/jars/derby-10.12.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_131-8u131-b11-2ubuntu1.16.04.3-b11
 user.dir=/home/azeltov/BigModel
