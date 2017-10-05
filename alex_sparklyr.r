@@ -53,3 +53,4 @@ myHadoopCluster <- RxSpark()
 rxSetComputeContext(myHadoopCluster)
 
 rxHadoopMakeDir("/SampleData")
+getwd()
