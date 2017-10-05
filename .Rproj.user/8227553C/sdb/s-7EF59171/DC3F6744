@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(sparklyr)\nlibrary(dplyr)\nsc <- spark_connect(master = \"local\")\n\nflights_tbl <- copy_to(sc, nycflights13::flights, \"flights\")\n\n# transform our data set, and then partition into 'training', 'test'\npartitions <- flights_tbl %>%\n  sdf_partition(training = 0.5, test = 0.5, seed = 1099)\n\n# fit a linear model to the training dataset\nfit <- partitions$training %>%\n  ml_linear_regression(response = \"mpg\", features = c(\"wt\", \"cyl\"))",
+    "created" : 1507136310146.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "935632",
+    "id" : "DC3F6744",
+    "lastKnownWriteTime" : 250675512,
+    "last_content_update" : 1507136549097,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

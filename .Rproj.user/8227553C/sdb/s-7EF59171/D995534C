@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(sparklyr)\nlibrary(dplyr)\nsc <- spark_connect(master = \"local\")\n\nflightsTbl <- copy_to(dest=sc, df=nycflights13::flights, name='flights', memory=TRUE)\n\nclass(flightsTbl)\nflightsTbl\n\nncol(flightsTbl)\nnrow(flightsTbl)\n\nflightsTbl %>% \n  group_by(origin) %>% \n  summarize(AvgDelay=mean(dep_delay))\n\nhead(flightsTbl)\n\nmod1 <- ml_linear_regression(x=flightsTbl, \n                             response='dep_delay',\n                             features=c('month', 'day', 'dep_time')\n)\n\nmod1\nsummary(mod1)\nclass(mod1)\n\nmod2 <- ml_linear_regression(x=flightsTbl, \n                             response='dep_delay',\n                             features=c('month', 'day', 'dep_time', 'origin')\n)\n\nmod2\nsummary(mod2)\n\n\nmod3 <- ml_linear_regression(x=flightsTbl, \n                             response='dep_delay',\n                             features=c('month', 'day', 'dep_time', 'origin'),\n                             alpha=1\n)\n\nmod3\nsummary(mod3)\n\nR.version\ndplyr::db_drop_table(sc, 'flights')\n\nspark_disconnect(sc)\n\nrxSparkConnect()\n",
+    "created" : 1507138727837.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1792396767",
+    "id" : "D995534C",
+    "lastKnownWriteTime" : 1507145418,
+    "last_content_update" : 1507145418564,
+    "path" : "~/BigModel/sparklyIntro.r",
+    "project_path" : "sparklyIntro.r",
+    "properties" : {
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
